@@ -1,4 +1,4 @@
-# Hummingbird Instinct — Local Development
+# Hummingbird Instinct
 
 Consulting engagement knowledge management platform (Phase 1 — Local Dev).
 
