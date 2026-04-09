@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { @apply bg-gray-100; }
+  ::-webkit-scrollbar-thumb  { @apply bg-gray-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+}
+
+/* ── TipTap / Interview Canvas ─────────────────────────────────────────── */
+.interview-canvas .ProseMirror {
+  outline: none;
+  min-height: 400px;
+  line-height: 1.7;
+}
+
+.interview-canvas .ProseMirror p { margin-bottom: 0.5em; }
+.interview-canvas .ProseMirror h1 { font-size: 1.4em; font-weight: 700; margin: 0.8em 0 0.4em; }
+.interview-canvas .ProseMirror h2 { font-size: 1.2em; font-weight: 600; margin: 0.7em 0 0.3em; }
+.interview-canvas .ProseMirror h3 { font-size: 1.05em; font-weight: 600; margin: 0.6em 0 0.3em; }
+.interview-canvas .ProseMirror ul { list-style: disc;    padding-left: 1.4em; margin-bottom: 0.5em; }
+.interview-canvas .ProseMirror ol { list-style: decimal; padding-left: 1.4em; margin-bottom: 0.5em; }
+.interview-canvas .ProseMirror li { margin-bottom: 0.15em; }
+.interview-canvas .ProseMirror blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1em;
+  color: #6b7280;
+  margin: 0.5em 0;
+}
+.interview-canvas .ProseMirror code {
+  background: #f3f4f6;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-family: ui-monospace, monospace;
+}
+.interview-canvas .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #9ca3af;
+  pointer-events: none;
+  height: 0;
+}
+.interview-canvas .ProseMirror mark {
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+@layer components {
+  /* Status badge colors */
+  .badge-active   { @apply bg-green-100  text-green-800; }
+  .badge-closed   { @apply bg-gray-100   text-gray-700; }
+  .badge-archived { @apply bg-amber-100  text-amber-800; }
+  .badge-review   { @apply bg-orange-100 text-orange-800; }
+  .badge-confirmed{ @apply bg-blue-100   text-blue-800; }
+  .badge-phi      { @apply bg-red-100    text-red-800; }
+}

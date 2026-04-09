@@ -1,0 +1,34 @@
+# Environment — NEVER commit secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Database (local SQLite file)
+server/data/*.db
+server/data/*.db-shm
+server/data/*.db-wal
+
+# Uploaded artifacts (source files stored locally in Phase 1)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Build output
+client/dist/
+client/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
